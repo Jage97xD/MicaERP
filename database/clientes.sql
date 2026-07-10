@@ -1,0 +1,16 @@
+CREATE TABLE IF NOT EXISTS clientes (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nombre VARCHAR(150) NOT NULL,
+  documento VARCHAR(30) NOT NULL UNIQUE,
+  celular VARCHAR(30),
+  correo VARCHAR(120),
+  direccion VARCHAR(180),
+  distrito VARCHAR(100),
+  provincia VARCHAR(100),
+  activo TINYINT DEFAULT 1,
+  creado_en TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  actualizado_en TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+ALTER TABLE cotizaciones ADD COLUMN cliente_id INT NULL AFTER id;
+ALTER TABLE cotizaciones ADD CONSTRAINT fk_cotizaciones_clientes FOREIGN KEY (cliente_id) REFERENCES clientes(id);

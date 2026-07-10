@@ -1,0 +1,35 @@
+# MicaERP Marketplace - Sitios públicos por Empresa (multiempresa)
+# /la-chacra/            -> tienda_visual_v3.php?empresa=la-chacra
+# /la-chacra/producto/x  -> producto_mysql.php?empresa=la-chacra&slug=x
+# /la-chacra/contacto    -> contacto.php?empresa=la-chacra
+# /la-chacra/marcas      -> marcas.php?empresa=la-chacra
+# /la-chacra/ofertas     -> ofertas.php?empresa=la-chacra
+#
+# No toca /admin/, /api/, ni ningún archivo o carpeta real existente
+# (las condiciones !-f y !-d se aseguran de eso).
+
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-z0-9-]+)/producto/([a-z0-9-]+)/?$ producto_mysql.php?empresa=$1&slug=$2 [L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-z0-9-]+)/tienda/([a-z0-9-]+)/?$ tienda_publica.php?empresa=$1&slug=$2 [L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-z0-9-]+)/contacto/?$ contacto.php?empresa=$1 [L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-z0-9-]+)/marcas/?$ marcas.php?empresa=$1 [L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-z0-9-]+)/ofertas/?$ ofertas.php?empresa=$1 [L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-z0-9-]+)/?$ tienda_visual_v3.php?empresa=$1 [L,QSA]

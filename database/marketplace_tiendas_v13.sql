@@ -1,0 +1,20 @@
+CREATE TABLE IF NOT EXISTS marketplace_tiendas (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nombre VARCHAR(160) NOT NULL,
+  slug VARCHAR(170) NOT NULL UNIQUE,
+  categoria_id INT NULL,
+  responsable VARCHAR(160) NULL,
+  whatsapp VARCHAR(40) NULL,
+  telefono VARCHAR(40) NULL,
+  correo VARCHAR(160) NULL,
+  direccion VARCHAR(220) NULL,
+  logo VARCHAR(255) NULL,
+  descripcion TEXT NULL,
+  activo TINYINT(1) DEFAULT 1,
+  creado_en TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  actualizado_en TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  INDEX(categoria_id), INDEX(activo)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+ALTER TABLE admin_usuarios ADD COLUMN tienda_id INT NULL AFTER rol_id;
+ALTER TABLE productos ADD COLUMN tienda_id INT NULL AFTER marca_id;

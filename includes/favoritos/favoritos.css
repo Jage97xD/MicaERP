@@ -1,0 +1,46 @@
+.fav-btn{
+    border:0;
+    background:white;
+    color:#ef4444;
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    box-shadow:0 8px 18px rgba(15,23,42,.16);
+    font-size:24px;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:absolute;
+    top:16px;
+    right:16px;
+    z-index:10;
+}
+.fav-btn.activo{background:#fee2e2}
+.fav-toast{
+    position:fixed;
+    top:25px;
+    right:25px;
+    background:#16a34a;
+    color:white;
+    padding:14px 20px;
+    border-radius:12px;
+    font-weight:bold;
+    z-index:999999;
+    box-shadow:0 12px 28px rgba(15,23,42,.20);
+}
+.fav-toast.error{background:#ef4444}
+.fav-link{position:relative}
+.fav-count{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-width:22px;
+    height:22px;
+    border-radius:999px;
+    background:#ef4444;
+    color:white;
+    font-size:12px;
+    font-weight:900;
+    margin-left:5px;
+}

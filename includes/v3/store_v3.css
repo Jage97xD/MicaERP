@@ -1,0 +1,841 @@
+*{box-sizing:border-box}
+body{margin:0;background:#edf4fb;background:radial-gradient(1200px 600px at 15% -10%, color-mix(in srgb, var(--v3-primary,#0057d9) 10%, #edf4fb), #edf4fb 55%);font-family:Arial,Helvetica,sans-serif;color:#07162f}
+a{text-decoration:none;color:inherit}
+
+.v3-topbar{height:36px;background:#07162f;color:white;display:flex;justify-content:space-between;align-items:center;padding:0 45px;font-weight:bold;font-size:14px}
+.v3-topbar div{display:flex;gap:28px}
+
+.v3-header{height:126px;background:white;position:relative;border-bottom:1px solid #e5e7eb;overflow:hidden}
+.v3-header-item{position:absolute;border-radius:12px;text-decoration:none;font-weight:bold;display:flex;align-items:center;justify-content:center;gap:10px}
+.v3-logo{justify-content:flex-start;padding:10px 14px;background:transparent!important}
+.v3-logo span{width:54px;height:54px;border-radius:14px;background:#008ee6;color:white;display:flex;align-items:center;justify-content:center;font-size:30px;font-weight:900}
+.v3-logo strong{font-size:30px;line-height:.9;color:#061a3d;text-transform:capitalize}
+.v3-search{padding:0;overflow:hidden;border:1px solid #d8dee9;background:white}
+.v3-search input{flex:1;height:100%;border:0;padding:0 22px;font-size:16px;outline:0}
+.v3-search button{width:70px;height:100%;border:0;background:var(--v3-primary,#0057d9);color:white;font-size:22px}
+.v3-link{padding:10px 14px;background:white;color:#111827}
+.v3-link strong{background:var(--v3-primary,#0057d9);color:white;border-radius:999px;padding:3px 8px;font-size:12px}
+.v3-whatsapp{background:#22c55e!important;color:white!important}
+
+.v3-menu{
+    height:54px;
+    background:#111827;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow-x:auto;
+    position:sticky;
+    top:0;
+    z-index:999;
+    box-shadow:0 6px 18px rgba(15,23,42,.18);
+}
+.v3-menu a{height:54px;color:white;font-weight:bold;padding:0 18px;display:flex;align-items:center;white-space:nowrap}
+.v3-menu a.active,.v3-menu a:hover{background:var(--v3-primary,#0057d9)}
+
+.v3-hero{
+    width:100%;
+    max-width:100%;
+    height:475px;
+    position:relative;
+    overflow:hidden;
+    background:#020817;
+    color:white;
+}
+.v3-slide{position:absolute;inset:0;opacity:0;transition:.6s;background-size:cover!important;background-position:center!important}
+.v3-slide::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.18)}
+.v3-slide.active{opacity:1;z-index:1}
+.v3-hero-content{position:absolute;left:12%;top:112px;z-index:2;max-width:760px}
+.v3-hero h1{font-size:64px;line-height:.95;margin:0}
+.v3-hero p{font-size:23px;margin:20px 0 28px;color:#f8fafc}
+.v3-hero-content a{display:inline-block;background:var(--v3-primary,#0057d9);color:white;padding:16px 28px;border-radius:10px;font-weight:bold}
+.v3-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:52px;height:52px;border:0;border-radius:50%;background:rgba(255,255,255,.18);color:white;font-size:34px;cursor:pointer}
+.v3-arrow.left{left:28px}.v3-arrow.right{right:28px}
+.v3-dots{position:absolute;bottom:25px;left:50%;transform:translateX(-50%);z-index:6;display:flex;gap:10px}
+.v3-dots button{width:12px;height:12px;border-radius:50%;border:0;background:rgba(255,255,255,.45);cursor:pointer}
+.v3-dots button.active{background:white}
+
+.v3-services{max-width:1185px;margin:-34px auto 70px;background:white;border-radius:12px;min-height:86px;box-shadow:0 14px 30px rgba(15,23,42,.12);display:grid;grid-template-columns:repeat(4,1fr);position:relative;z-index:4}
+.v3-services div{display:flex;align-items:center;justify-content:center;gap:12px;border-right:1px solid #e5e7eb}
+.v3-services div:last-child{border-right:0}
+.v3-services span{display:block;font-size:13px;color:#64748b;margin-top:4px}
+
+.v3-container{max-width:1270px;margin:0 auto;padding:0 35px 50px}
+.v3-section-head{display:flex;justify-content:space-between;align-items:center;margin:25px 0}
+.v3-section-head h2{font-size:30px;margin:0}
+.v3-section-head a{background:white;padding:12px 22px;border-radius:30px;font-weight:bold;box-shadow:0 5px 16px rgba(15,23,42,.08)}
+.v3-filters{background:white;border-radius:18px;box-shadow:0 8px 22px rgba(15,23,42,.08);padding:20px;margin-bottom:25px;display:grid;grid-template-columns:1fr 260px 130px;gap:12px}
+.v3-filters input,.v3-filters select{padding:14px;border:1px solid #d8dee9;border-radius:12px;font-size:15px}
+.v3-filters button{border:0;border-radius:12px;background:var(--v3-primary,#0057d9);color:white;font-weight:bold}
+
+.v3-product-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.v3-product-card{background:white;border-radius:20px;box-shadow:0 8px 22px rgba(15,23,42,.10);padding:16px;position:relative;transition:.25s;border:1px solid transparent}
+.v3-product-card:hover{transform:translateY(-6px);box-shadow:0 18px 34px rgba(15,23,42,.16);border-color:color-mix(in srgb, var(--v3-primary,#0057d9) 25%, transparent)}
+.v3-product-card img{width:100%;height:190px;object-fit:cover;border-radius:15px;background:#eef2ff}
+.v3-badge{position:absolute;top:25px;left:25px;background:var(--v3-primary,#0057d9);color:white;padding:6px 10px;border-radius:8px;font-size:12px;font-weight:bold}
+.v3-badge.offer{background:#ef4444}
+.v3-product-card small{color:#64748b;display:block;margin-top:10px}
+.v3-product-card h3{font-size:20px;margin:8px 0;min-height:48px}
+.v3-vendedor{font-size:12.5px;font-weight:700;color:var(--v3-primary,#0057d9);background:#eff6ff;display:inline-block;padding:3px 9px;border-radius:20px;margin-bottom:6px;text-decoration:none;cursor:pointer}
+.v3-vendedor:hover{background:#dbeafe}
+.v3-product-card p{color:#475569;min-height:42px}
+.v3-price{font-size:22px;font-weight:900;color:var(--v3-primary,#0057d9);margin:15px 0}
+.v3-price span{color:#9ca3af;text-decoration:line-through;font-size:14px}
+.v3-stock{color:#16a34a;font-weight:bold;font-size:13px}
+.v3-product-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.v3-product-actions a,.v3-product-actions button{text-align:center;padding:11px;border-radius:11px;font-weight:bold;border:0;cursor:pointer}
+.v3-product-actions a{background:#111827;color:white}
+.v3-product-actions button{background:#22c55e;color:white}
+
+.v3-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin:35px 0}
+.v3-stat{background:white;border-radius:14px;box-shadow:0 8px 22px rgba(15,23,42,.08);padding:20px;text-align:center}
+.v3-stat strong{display:block;font-size:28px;color:#8b5a2b}
+.v3-stat span{font-size:13px}
+
+.v3-blocks{margin:35px 0}
+.v3-block-info{background:white;border-radius:14px;padding:20px;box-shadow:0 8px 18px rgba(15,23,42,.08);margin-bottom:15px}
+.v3-block-banner{background:#111827;color:white;border-radius:16px;padding:28px;margin-bottom:18px}
+
+.v3-footer{background:#07162f;color:white;padding:38px}
+.v3-footer-grid{max-width:1050px;margin:auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:28px}
+.v3-footer a{display:block;margin:7px 0;color:white}
+.v3-float-chat{position:fixed;right:30px;bottom:30px;width:62px;height:62px;border-radius:50%;background:var(--v3-primary,#0057d9);color:white;display:flex;align-items:center;justify-content:center;font-size:28px;box-shadow:0 12px 28px rgba(0,87,217,.38);z-index:50}
+.v3-toast{position:fixed;top:25px;right:25px;background:#16a34a;color:white;padding:14px 20px;border-radius:12px;font-weight:bold;z-index:9999}
+
+@media(max-width:1000px){
+    .v3-topbar{padding:0 12px;font-size:12px}
+    .v3-topbar div:last-child{display:none}
+    .v3-header{height:230px}
+    .v3-menu{justify-content:flex-start}
+    .v3-product-grid,.v3-stats{grid-template-columns:repeat(2,1fr)}
+    .v3-filters{grid-template-columns:1fr}
+    .v3-services{grid-template-columns:repeat(2,1fr);margin:20px 25px 45px}
+    .v3-footer-grid{grid-template-columns:1fr}
+}
+@media(max-width:650px){
+    .v3-product-grid,.v3-stats{grid-template-columns:1fr}
+    .v3-hero h1{font-size:42px}
+    .v3-hero-content{left:42px;top:90px}
+}
+
+
+/* ================================
+   Header / Menú V2 MicaStore
+   ================================ */
+
+.v3-menu-v2{
+    height:auto;
+    min-height:58px;
+    background:#111827;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:visible!important;
+    position:sticky;
+    top:0;
+    z-index:25000!important;
+    box-shadow:0 8px 24px rgba(15,23,42,.22);
+}
+
+.v3-menu-inner{
+    width:100%;
+    max-width:1220px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:4px;
+    padding:0 18px;
+}
+
+.v3-menu-v2 a,
+.v3-menu-dropbtn{
+    height:58px;
+    color:white;
+    font-weight:900;
+    padding:0 17px;
+    display:flex;
+    align-items:center;
+    white-space:nowrap;
+    border:0;
+    background:transparent;
+    cursor:pointer;
+    font-size:15px;
+    border-radius:0;
+}
+
+.v3-menu-v2 a.active,
+.v3-menu-v2 a:hover,
+.v3-menu-dropbtn:hover{
+    background:var(--v3-primary,#0057d9);
+}
+
+.v3-menu-dropdown{
+    position:relative;
+    height:58px;
+}
+
+.v3-menu-dropbtn span{
+    margin-left:6px;
+    font-size:12px;
+}
+
+.v3-menu-dropdown-content{
+    position:absolute;
+    top:58px;
+    left:0;
+    width:310px;
+    max-height:430px;
+    overflow:auto;
+    background:white;
+    color:#07162f;
+    border-radius:0 0 18px 18px;
+    box-shadow:0 22px 45px rgba(15,23,42,.28);
+    border:1px solid #e5e7eb;
+    padding:10px;
+    display:none;
+    z-index:999999;
+}
+
+.v3-menu-dropdown:hover .v3-menu-dropdown-content,
+.v3-menu-dropdown.open .v3-menu-dropdown-content{
+    display:block;
+}
+
+.v3-menu-dropdown-content a{
+    height:auto!important;
+    color:#07162f!important;
+    background:white!important;
+    border-radius:12px;
+    padding:13px 14px!important;
+    display:flex;
+    justify-content:flex-start;
+    align-items:center;
+    font-weight:800;
+}
+
+.v3-menu-dropdown-content a:hover,
+.v3-menu-dropdown-content a.active{
+    background:#eef6ff!important;
+    color:var(--v3-primary,#0057d9)!important;
+}
+
+.v3-menu-all{
+    border-top:1px solid #e5e7eb;
+    margin-top:8px;
+}
+
+.v3-menu-toggle{
+    display:none;
+    width:100%;
+    min-height:56px;
+    border:0;
+    background:#111827;
+    color:white;
+    font-weight:900;
+    font-size:16px;
+    cursor:pointer;
+    padding:0 18px;
+    text-align:left;
+}
+
+@media(max-width:900px){
+    .v3-menu-v2{
+        display:block;
+    }
+
+    .v3-menu-toggle{
+        display:block;
+    }
+
+    .v3-menu-inner{
+        display:none;
+        width:100%;
+        max-width:100%;
+        padding:8px;
+        flex-direction:column;
+        align-items:stretch;
+        background:#111827;
+    }
+
+    .v3-menu-v2.open .v3-menu-inner{
+        display:flex;
+    }
+
+    .v3-menu-v2 a,
+    .v3-menu-dropbtn{
+        width:100%;
+        height:48px;
+        justify-content:flex-start;
+        border-radius:12px;
+    }
+
+    .v3-menu-dropdown{
+        width:100%;
+        height:auto;
+    }
+
+    .v3-menu-dropdown-content{
+        position:relative;
+        top:auto;
+        left:auto;
+        width:100%;
+        max-height:320px;
+        border-radius:14px;
+        margin:6px 0 8px;
+        box-shadow:none;
+    }
+
+    .v3-menu-dropdown:hover .v3-menu-dropdown-content{
+        display:none;
+    }
+
+    .v3-menu-dropdown.open .v3-menu-dropdown-content{
+        display:block;
+    }
+}
+
+/* =====================================================
+   MicaStore UX Fix - Home compacto y sin desborde 100%
+   ===================================================== */
+html, body{
+    width:100%;
+    max-width:100%;
+    overflow-x:hidden;
+}
+
+.v3-topbar{
+    min-height:34px;
+    height:auto;
+    padding:8px 24px;
+    gap:12px;
+    flex-wrap:wrap;
+}
+.v3-topbar div{
+    flex-wrap:wrap;
+    gap:18px;
+}
+
+/* El header del builder ya no depende de coordenadas fijas de 1760px */
+.v3-header{
+    height:auto!important;
+    min-height:92px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:24px;
+    padding:16px 28px;
+    overflow:visible!important;
+}
+.v3-header-item{
+    position:static!important;
+    left:auto!important;
+    top:auto!important;
+    height:52px!important;
+    max-width:100%;
+}
+.v3-logo{
+    width:250px!important;
+    min-width:250px;
+    height:58px!important;
+    padding:0!important;
+}
+.v3-logo span{
+    width:48px;
+    height:48px;
+    font-size:26px;
+}
+.v3-logo strong{
+    font-size:19px;
+    line-height:1.15;
+}
+.v3-search{
+    flex:1 1 540px;
+    width:auto!important;
+    max-width:780px;
+    min-width:280px;
+}
+.v3-link{
+    width:auto!important;
+    min-width:120px;
+    padding:0 16px!important;
+    box-shadow:0 10px 26px rgba(15,23,42,.08);
+}
+.v3-whatsapp{
+    min-width:132px;
+}
+
+.v3-menu-v2{
+    min-height:52px;
+}
+.v3-menu-v2 a,
+.v3-menu-dropbtn{
+    height:52px;
+    padding:0 15px;
+    font-size:14px;
+}
+.v3-menu-dropdown{
+    height:52px;
+}
+.v3-menu-dropdown-content{
+    top:52px;
+}
+
+/* Carrusel más bajo para que productos aparezcan antes */
+.v3-hero{
+    height:340px!important;
+    min-height:340px!important;
+}
+.v3-hero-content{
+    left:7%!important;
+    top:68px!important;
+    max-width:650px;
+}
+.v3-hero h1{
+    font-size:50px!important;
+    line-height:.95;
+}
+.v3-hero p{
+    font-size:19px!important;
+    margin:16px 0 22px;
+}
+.v3-hero-content a{
+    padding:13px 24px;
+}
+.v3-arrow{
+    width:46px;
+    height:46px;
+    font-size:28px;
+}
+.v3-dots{
+    bottom:16px;
+}
+
+.v3-services{
+    max-width:980px;
+    min-height:66px;
+    margin:-22px auto 30px!important;
+}
+.v3-services div{
+    padding:10px 12px;
+}
+.v3-services strong{
+    font-size:13px;
+}
+.v3-services span{
+    font-size:11px;
+}
+
+.v3-container{
+    max-width:1120px;
+    padding:0 24px 42px;
+}
+.v3-section-head{
+    margin:16px 0 18px!important;
+}
+.v3-section-head h2{
+    font-size:28px;
+}
+.v3-section-head span{
+    color:#334155;
+    font-weight:800;
+}
+.v3-product-grid{
+    gap:20px;
+}
+.v3-product-card{
+    border-radius:18px;
+    padding:14px;
+}
+.v3-product-card img{
+    height:165px;
+}
+.v3-product-card h3{
+    font-size:17px;
+    min-height:40px;
+}
+.v3-product-card p{
+    min-height:34px;
+}
+.v3-price{
+    font-size:20px;
+    margin:10px 0;
+}
+
+@media(max-width:1150px){
+    .v3-header{
+        justify-content:flex-start;
+        gap:14px;
+    }
+    .v3-logo{
+        width:160px!important;
+        min-width:160px;
+    }
+    .v3-logo strong{font-size:16px;}
+    .v3-search{flex-basis:420px;}
+    .v3-link{min-width:auto;}
+}
+
+@media(max-width:900px){
+    .v3-header{
+        display:grid;
+        grid-template-columns:1fr;
+        padding:16px;
+    }
+    .v3-logo,
+    .v3-search,
+    .v3-link{
+        width:100%!important;
+        min-width:0;
+    }
+    .v3-hero{
+        height:320px!important;
+        min-height:320px!important;
+    }
+    .v3-hero h1{font-size:40px!important;}
+    .v3-hero-content{left:28px!important;top:62px!important;}
+    .v3-services{grid-template-columns:repeat(2,1fr);margin:18px 16px 26px!important;}
+}
+
+@media(max-width:650px){
+    .v3-topbar{padding:8px 12px;}
+    .v3-hero{height:300px!important;min-height:300px!important;}
+    .v3-hero h1{font-size:34px!important;}
+    .v3-hero p{font-size:16px!important;}
+    .v3-services{grid-template-columns:1fr;}
+}
+
+/* MicaStore - menú público administrable */
+.hide-desktop{display:none!important;}
+@media(max-width:900px){
+    .hide-desktop{display:inline-flex!important;}
+    .hide-mobile{display:none!important;}
+}
+
+
+/* MicaStore v4 - header flexible final */
+.v3-header{
+    flex-wrap:wrap!important;
+    min-height:88px!important;
+    row-gap:12px!important;
+}
+.v3-header .mica-user-menu{
+    position:relative!important;
+    left:auto!important;
+    top:auto!important;
+    flex:0 0 auto!important;
+}
+.v3-header .v3-search{
+    flex:1 1 520px!important;
+    min-width:320px!important;
+}
+@media(max-width:1200px){
+    .v3-header .v3-search{order:5;flex-basis:100%!important;}
+}
+
+/* =====================================================
+   MicaStore v5 - Contacto integrado en Home y página full
+   ===================================================== */
+.v3-home-contact{
+    margin:42px 0 8px;
+    background:linear-gradient(135deg,#07162f,var(--v3-primary,#0057d9));
+    color:white;
+    border-radius:28px;
+    padding:34px;
+    box-shadow:0 18px 40px rgba(15,23,42,.16);
+    overflow:hidden;
+    position:relative;
+}
+.v3-home-contact::after{
+    content:"";
+    position:absolute;
+    right:-90px;
+    top:-90px;
+    width:240px;
+    height:240px;
+    border-radius:50%;
+    background:rgba(255,255,255,.10);
+}
+.v3-contact-kicker{
+    display:inline-flex;
+    background:rgba(255,255,255,.16);
+    color:inherit;
+    padding:7px 12px;
+    border-radius:999px;
+    font-weight:900;
+    font-size:13px;
+    margin-bottom:10px;
+}
+.v3-home-contact h2,
+.v3-contact-hero h1{
+    margin:0 0 10px;
+    font-size:36px;
+    line-height:1.05;
+}
+.v3-home-contact p,
+.v3-contact-hero p{
+    margin:0;
+    color:#eaf2ff;
+    font-size:17px;
+    line-height:1.55;
+}
+.v3-home-contact-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
+    margin:24px 0;
+    position:relative;
+    z-index:1;
+}
+.v3-home-contact-item{
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.18);
+    border-radius:16px;
+    padding:16px;
+    backdrop-filter:blur(6px);
+}
+.v3-home-contact-item strong,
+.v3-home-contact-item span{
+    display:block;
+}
+.v3-home-contact-item span{
+    margin-top:6px;
+    color:#e2e8f0;
+    font-size:13px;
+}
+.v3-home-contact-actions,
+.v3-contact-actions{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    position:relative;
+    z-index:1;
+}
+.v3-contact-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-height:48px;
+    padding:0 20px;
+    border-radius:14px;
+    font-weight:900;
+    border:0;
+    cursor:pointer;
+    text-decoration:none;
+}
+.v3-contact-btn.green{background:#22c55e;color:white;}
+.v3-contact-btn.blue{background:var(--v3-primary,#0057d9);color:white;}
+.v3-contact-btn.dark{background:#111827;color:white;}
+
+.v3-contact-page{
+    background:#edf4fb;
+}
+.v3-contact-hero{
+    background:linear-gradient(135deg,#07162f,var(--v3-primary,#0057d9) 55%,#22c55e);
+    color:white;
+    min-height:440px;
+    display:grid;
+    grid-template-columns:1.1fr .8fr;
+    gap:34px;
+    align-items:center;
+    padding:58px max(30px,calc((100vw - 1180px)/2));
+}
+.v3-contact-hero-text{
+    max-width:620px;
+}
+.v3-contact-hero h1{
+    font-size:54px;
+}
+.v3-contact-card{
+    background:white;
+    color:#07162f;
+    border-radius:26px;
+    padding:26px;
+    box-shadow:0 22px 55px rgba(15,23,42,.24);
+}
+.v3-contact-card h2{
+    margin:0 0 12px;
+    font-size:28px;
+}
+.v3-contact-row{
+    padding:14px 0;
+    border-bottom:1px solid #e5e7eb;
+}
+.v3-contact-row:last-child{border-bottom:0;}
+.v3-contact-row strong,
+.v3-contact-row span{
+    display:block;
+}
+.v3-contact-row span{
+    margin-top:5px;
+    color:#334155;
+}
+.v3-contact-content{
+    max-width:1180px;
+    margin:34px auto 50px;
+    padding:0 24px;
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    gap:24px;
+}
+.v3-contact-form-card,
+.v3-contact-mini-card{
+    background:white;
+    border-radius:24px;
+    padding:26px;
+    box-shadow:0 12px 30px rgba(15,23,42,.08);
+    border:1px solid #e5e7eb;
+}
+.v3-contact-mini-card{margin-bottom:18px;}
+.v3-section-head.compact{margin:0 0 18px!important;}
+.v3-contact-form{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+}
+.v3-contact-form .full{grid-column:1/-1;}
+.v3-contact-form label{
+    display:block;
+    font-weight:900;
+    margin-bottom:7px;
+}
+.v3-contact-form input,
+.v3-contact-form textarea{
+    width:100%;
+    border:1px solid #d8dee9;
+    border-radius:14px;
+    padding:14px;
+    font-size:15px;
+    outline:none;
+}
+.v3-contact-form textarea{
+    min-height:130px;
+    resize:vertical;
+}
+.v3-contact-form input:focus,
+.v3-contact-form textarea:focus{
+    border-color:var(--v3-primary,#0057d9);
+    box-shadow:0 0 0 4px rgba(0,87,217,.10);
+}
+.v3-contact-form button{
+    grid-column:1/-1;
+    border:0;
+    background:var(--v3-primary,#0057d9);
+    color:white;
+    border-radius:14px;
+    padding:15px 20px;
+    font-weight:900;
+    cursor:pointer;
+}
+.v3-check{
+    display:flex!important;
+    gap:10px;
+    align-items:flex-start;
+    background:#f8fafc;
+    padding:14px;
+    border-radius:14px;
+    color:#334155;
+    font-weight:700!important;
+}
+.v3-check input{width:auto!important;margin-top:3px;}
+.v3-contact-alert{
+    padding:14px;
+    border-radius:14px;
+    font-weight:900;
+    margin-bottom:16px;
+}
+.v3-contact-alert.ok{background:#dcfce7;color:#166534;border:1px solid #86efac;}
+.v3-contact-alert.error{background:#fee2e2;color:#991b1b;border:1px solid #fecaca;}
+.v3-contact-mini-card h3{margin:0 0 10px;font-size:22px;}
+.v3-contact-mini-card p{color:#475569;line-height:1.5;}
+
+@media(max-width:950px){
+    .v3-home-contact-grid,
+    .v3-contact-hero,
+    .v3-contact-content{
+        grid-template-columns:1fr;
+    }
+    .v3-home-contact-grid{grid-template-columns:1fr 1fr;}
+    .v3-contact-hero{padding:42px 22px;}
+    .v3-contact-hero h1{font-size:42px;}
+}
+@media(max-width:620px){
+    .v3-home-contact{padding:24px;border-radius:22px;}
+    .v3-home-contact-grid,
+    .v3-contact-form{grid-template-columns:1fr;}
+    .v3-home-contact h2{font-size:30px;}
+}
+
+/* MicaStore v6 - TopBar administrable */
+.v3-topbar a.v3-topbar-link,
+.v3-topbar .v3-topbar-item{
+    color:#fff;
+    text-decoration:none;
+    display:inline-flex;
+    align-items:center;
+    gap:4px;
+    white-space:nowrap;
+}
+.v3-topbar a.v3-topbar-link:hover{
+    color:#60a5fa;
+    text-decoration:underline;
+}
+.v3-topbar-icon{display:inline-block;line-height:1}
+
+/* MicaStore v8 - logo dinámico desde Configuración */
+.v3-logo-img{
+    width:54px;
+    height:54px;
+    min-width:54px;
+    min-height:54px;
+    max-width:54px;
+    max-height:54px;
+    aspect-ratio:1/1;
+    border-radius:14px;
+    object-fit:contain!important;
+    object-position:center;
+    background:white;
+    border:1px solid #e5e7eb;
+    padding:4px;
+    flex:0 0 auto;
+}
+.v3-logo strong{
+    white-space:normal;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    display:-webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
+}
+@media(max-width:700px){
+    .v3-logo-img{width:46px;height:46px;}
+}
+
+
+/* MicaStore v10 - institucional, publicidad y campos personalizados */
+.v3-web-promo{max-width:1120px;margin:34px auto 0;background:linear-gradient(120deg,#07162f,var(--v3-primary,#0057d9));color:#fff;border-radius:22px;padding:24px 28px;display:flex;align-items:center;justify-content:space-between;gap:18px;box-shadow:0 12px 28px rgba(15,23,42,.16)}
+.v3-web-promo strong{font-size:20px}.v3-web-promo p{margin:8px 0 0;color:#e5eefc}.v3-web-promo a{background:#22c55e;color:#fff;padding:13px 18px;border-radius:12px;font-weight:900;text-decoration:none;white-space:nowrap}
+.v3-footer-grid{grid-template-columns:1.5fr 1fr 1fr 1.2fr!important}.v3-page-hero{background:linear-gradient(120deg,#07162f,var(--v3-primary,#0057d9),#16a34a);color:#fff;padding:80px 24px}.v3-page-hero-inner{max-width:1120px;margin:auto}.v3-page-hero h1{font-size:46px;margin:0 0 12px}.v3-page-hero p{font-size:18px;max-width:760px;line-height:1.6}.v3-page-wrap{max-width:1120px;margin:38px auto;padding:0 24px}.v3-info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.v3-info-card,.v3-form-card,.v3-legal-card{background:#fff;border:1px solid #e5e7eb;border-radius:20px;padding:24px;box-shadow:0 10px 24px rgba(15,23,42,.08)}.v3-info-card h3{font-size:23px;margin-bottom:12px}.v3-info-card p,.v3-legal-card p,.v3-legal-card li{line-height:1.65;color:#334155}.v3-values{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}.v3-values span{background:#eef6ff;color:var(--v3-primary,#0057d9);padding:8px 12px;border-radius:999px;font-weight:800}.v3-claim-form{display:grid;grid-template-columns:1fr 1fr;gap:14px}.v3-claim-form .full{grid-column:1/-1}.v3-claim-form label{font-weight:900;display:block;margin-bottom:6px}.v3-claim-form input,.v3-claim-form select,.v3-claim-form textarea{width:100%;padding:13px;border:1px solid #d8dee9;border-radius:12px;font-size:15px}.v3-claim-form textarea{min-height:120px}.v3-claim-form button{background:var(--v3-primary,#0057d9);color:#fff;border:0;border-radius:12px;padding:14px 18px;font-weight:900;cursor:pointer}.v3-alert-ok{background:#dcfce7;color:#166534;border:1px solid #86efac;border-radius:12px;padding:14px;margin-bottom:18px;font-weight:900}.v3-alert-error{background:#fee2e2;color:#991b1b;border:1px solid #fecaca;border-radius:12px;padding:14px;margin-bottom:18px;font-weight:900}.v3-extra-fields{background:#f8fafc;border:1px solid #e5e7eb;border-radius:16px;padding:18px;margin-top:18px}.v3-extra-fields p{margin:8px 0}.v3-contact-custom{margin-top:16px}
+@media(max-width:900px){.v3-web-promo{margin:24px 18px;flex-direction:column;align-items:flex-start}.v3-footer-grid,.v3-info-grid{grid-template-columns:1fr!important}.v3-claim-form{grid-template-columns:1fr}.v3-page-hero h1{font-size:34px}}
+
+/* MicaStore v12 - CMS, RRHH y publicidad discreta */
+.v3-newsletter-lite{
+    max-width:1120px;
+    margin:34px auto;
+    background:#ffffff;
+    border:1px solid #e5e7eb;
+    border-radius:22px;
+    padding:24px 28px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:18px;
+    box-shadow:0 10px 24px rgba(15,23,42,.08);
+}
+.v3-newsletter-lite h2{margin:0 0 8px;color:#07162f;font-size:24px;}
+.v3-newsletter-lite p{margin:0;color:#475569;line-height:1.5;}
+.v3-newsletter-lite a{background:var(--v3-primary,#0057d9);color:white;text-decoration:none;padding:13px 18px;border-radius:12px;font-weight:900;white-space:nowrap;}
+.v3-web-promo{max-width:1120px;margin:34px auto 0;background:#ffffff!important;color:#07162f!important;border:1px solid #dbeafe;border-left:5px solid var(--v3-primary,#0057d9);border-radius:20px;padding:18px 22px;display:flex;align-items:center;justify-content:space-between;gap:18px;box-shadow:0 10px 24px rgba(15,23,42,.08)}
+.v3-web-promo strong{font-size:18px}.v3-web-promo p{margin:6px 0 0;color:#475569!important}.v3-web-promo a{background:#22c55e;color:#fff;padding:12px 16px;border-radius:12px;font-weight:900;text-decoration:none;white-space:nowrap}.v3-web-promo-by{color:#64748b;font-weight:700}
+.v3-jobs-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+.v3-job-card{background:#fff;border:1px solid #e5e7eb;border-radius:22px;padding:24px;box-shadow:0 10px 24px rgba(15,23,42,.08);display:flex;flex-direction:column;justify-content:space-between;gap:18px;}
+.v3-job-card h2{font-size:26px;margin:10px 0;color:#07162f}.v3-job-card p{color:#475569;line-height:1.6}.v3-job-area{display:inline-block;background:#eef6ff;color:var(--v3-primary,#0057d9);border-radius:999px;padding:7px 12px;font-weight:900;font-size:13px}.v3-job-meta{display:flex;gap:10px;flex-wrap:wrap;color:#334155;font-size:14px}.v3-job-meta span{background:#f8fafc;border:1px solid #e5e7eb;border-radius:999px;padding:7px 10px}.v3-job-btn{display:inline-block;background:var(--v3-primary,#0057d9);color:#fff;text-decoration:none;border-radius:12px;padding:13px 18px;font-weight:900;text-align:center}.v3-job-detail{display:grid;grid-template-columns:1fr .9fr;gap:24px}.v3-job-detail h2{margin-top:18px;color:#07162f}
+@media(max-width:900px){.v3-newsletter-lite,.v3-web-promo{margin:24px 18px;flex-direction:column;align-items:flex-start}.v3-jobs-grid,.v3-job-detail{grid-template-columns:1fr}}

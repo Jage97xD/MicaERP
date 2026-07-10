@@ -1,0 +1,91 @@
+*{box-sizing:border-box}
+body{margin:0;background:#edf4fb;font-family:Arial,Helvetica,sans-serif;color:#07162f}
+a{text-decoration:none;color:inherit}
+
+.topbar-public{height:36px;background:#07162f;color:white;display:flex;justify-content:space-between;align-items:center;padding:0 45px;font-weight:bold;font-size:14px}
+.topbar-public div{display:flex;gap:28px}
+
+.header-main{height:126px;background:white;display:grid;grid-template-columns:240px 1fr 560px;gap:28px;align-items:center;padding:0 45px}
+.brand-public{display:flex;align-items:center;gap:12px}
+.brand-public span{width:56px;height:56px;background:#008ee6;color:white;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:30px;font-weight:900}
+.brand-public strong{font-size:30px;line-height:.9}
+
+.search-main{height:56px;border:1px solid #d8dee9;border-radius:13px;display:flex;overflow:hidden}
+.search-main input{flex:1;border:0;padding:0 22px;font-size:16px;outline:0}
+.search-main button{width:72px;border:0;background:#0057d9;color:white;font-size:22px}
+
+.header-actions{display:flex;align-items:center;justify-content:flex-end;gap:18px;font-weight:bold}
+.header-actions .wa{background:#22c55e;color:white;padding:14px 18px;border-radius:10px}
+.header-actions strong{background:#0057d9;color:white;border-radius:999px;padding:3px 8px}
+
+.menu-main{height:53px;background:#111827;display:flex;justify-content:center;align-items:center;overflow:auto}
+.menu-main a{color:white;font-weight:bold;padding:0 18px;height:53px;display:flex;align-items:center;white-space:nowrap}
+.menu-main a.active,.menu-main a:hover{background:#0057d9}
+
+.hero{max-width:1515px;height:475px;margin:0 auto;position:relative;overflow:hidden;background:#020817;color:white}
+.slide{position:absolute;inset:0;opacity:0;transition:.6s;background-size:cover;background-position:center}
+.slide::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.18)}
+.slide.active{opacity:1;z-index:1}
+.hero-content{position:absolute;left:78px;top:115px;z-index:2}
+.hero h1{font-size:64px;line-height:.95;margin:0}
+.hero p{font-size:23px}
+.hero-content a{display:inline-block;background:#0057d9;color:white;padding:16px 28px;border-radius:10px;font-weight:bold}
+.hero-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:52px;height:52px;border:0;border-radius:50%;background:rgba(255,255,255,.18);color:white;font-size:34px;cursor:pointer}
+.hero-arrow.left{left:25px}.hero-arrow.right{right:25px}
+.hero-dots{position:absolute;bottom:25px;left:50%;transform:translateX(-50%);z-index:6;display:flex;gap:10px}
+.hero-dots button{width:12px;height:12px;border-radius:50%;border:0;background:rgba(255,255,255,.45);cursor:pointer}
+.hero-dots button.active{background:white}
+
+.services{max-width:1185px;margin:-34px auto 70px;background:white;border-radius:12px;min-height:86px;box-shadow:0 14px 30px rgba(15,23,42,.12);display:grid;grid-template-columns:repeat(4,1fr);position:relative;z-index:4}
+.services div{display:flex;align-items:center;justify-content:center;gap:12px;border-right:1px solid #e5e7eb}
+.services div:last-child{border-right:0}
+.services span{display:block;font-size:13px;color:#64748b;margin-top:4px}
+
+.container{max-width:1270px;margin:0 auto;padding:0 35px 50px}
+.section-head{display:flex;justify-content:space-between;align-items:center;margin:25px 0}
+.section-head h2{font-size:30px;margin:0}
+.section-head a{background:white;padding:12px 22px;border-radius:30px;font-weight:bold;box-shadow:0 5px 16px rgba(15,23,42,.08)}
+
+.filters{background:white;border-radius:18px;box-shadow:0 8px 22px rgba(15,23,42,.08);padding:20px;margin-bottom:25px;display:grid;grid-template-columns:1fr 260px 130px;gap:12px}
+.filters input,.filters select{padding:14px;border:1px solid #d8dee9;border-radius:12px;font-size:15px}
+.filters button{border:0;border-radius:12px;background:#0057d9;color:white;font-weight:bold}
+
+.product-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.product-card{background:white;border-radius:20px;box-shadow:0 8px 22px rgba(15,23,42,.10);padding:16px;position:relative;transition:.25s}
+.product-card:hover{transform:translateY(-5px)}
+.product-card img{width:100%;height:190px;object-fit:cover;border-radius:15px;background:#eef2ff}
+.badge{position:absolute;top:25px;left:25px;background:#0057d9;color:white;padding:6px 10px;border-radius:8px;font-size:12px;font-weight:bold}
+.badge.offer{background:#ef4444}
+.product-card small{color:#64748b;display:block;margin-top:10px}
+.product-card h3{font-size:20px;margin:8px 0;min-height:48px}
+.product-card p{color:#475569;min-height:42px}
+.price{font-size:22px;font-weight:900;color:#0057d9;margin:15px 0}
+.price span{color:#9ca3af;text-decoration:line-through;font-size:14px}
+.stock{color:#16a34a;font-weight:bold;font-size:13px}
+.product-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.product-actions a,.product-actions button{text-align:center;padding:11px;border-radius:11px;font-weight:bold;border:0;cursor:pointer}
+.product-actions a{background:#111827;color:white}
+.product-actions button{background:#22c55e;color:white}
+
+.blocks{margin:35px 0}
+.block-info{background:white;border-radius:14px;padding:20px;box-shadow:0 8px 18px rgba(15,23,42,.08);margin-bottom:15px}
+.block-banner{background:#111827;color:white;border-radius:16px;padding:28px;margin-bottom:18px}
+
+.footer-public{background:#07162f;color:white;padding:38px;display:grid;grid-template-columns:2fr 1fr 1fr;gap:28px}
+.footer-public a{display:block;margin:7px 0}
+
+.float-chat{position:fixed;right:30px;bottom:30px;width:62px;height:62px;border-radius:50%;background:#0057d9;color:white;display:flex;align-items:center;justify-content:center;font-size:28px;box-shadow:0 12px 28px rgba(0,87,217,.38);z-index:50}
+.toast{position:fixed;top:25px;right:25px;background:#16a34a;color:white;padding:14px 20px;border-radius:12px;font-weight:bold;z-index:9999}
+
+@media(max-width:1000px){
+    .header-main{grid-template-columns:1fr; height:auto; padding:25px}
+    .product-grid{grid-template-columns:repeat(2,1fr)}
+    .filters{grid-template-columns:1fr}
+    .services{grid-template-columns:repeat(2,1fr);margin:20px 25px 45px}
+    .footer-public{grid-template-columns:1fr}
+}
+@media(max-width:650px){
+    .product-grid{grid-template-columns:1fr}
+    .hero h1{font-size:42px}
+    .hero-content{left:42px;top:90px}
+}

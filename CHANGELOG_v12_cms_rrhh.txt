@@ -1,0 +1,32 @@
+MicaStore v12 - CMS + Trabaja con nosotros
+
+Cambios principales:
+- Nuevo módulo Admin: Contenido del sitio.
+  - Edita newsletter, textos del home, footer, publicidad discreta, misión, visión, valores, términos, privacidad y textos de Trabaja con nosotros.
+- Nuevo módulo Admin: Trabaja con nosotros.
+  - Crear/editar puestos de trabajo.
+  - Activar/desactivar/cerrar puestos.
+  - Ver postulantes y cambiar estado: Nuevo, Revisado, Entrevista, Contratado, Descartado.
+  - Descargar CV subido por el postulante.
+- Nueva página pública: trabaja_con_nosotros.php.
+- Nueva página pública: trabajo_detalle.php.
+- Footer actualizado:
+  - Publicidad más discreta y editable desde Contenido del sitio.
+  - Enlaces a Trabaja con nosotros.
+  - Descripción del footer editable.
+- Home actualizado:
+  - Newsletter editable desde Contenido del sitio.
+- Migrador actualizado:
+  - Crea rrhh_puestos.
+  - Crea rrhh_postulantes.
+  - Crea valores de configuración para CMS.
+  - Agrega permisos de módulos contenido y rrhh.
+  - Agrega enlace de Trabaja con nosotros al menú público si no existe.
+
+Instalación:
+1. Reemplazar archivos.
+2. Ejecutar una vez: /micastore/admin/migrar_erp_core.php
+3. Eliminar admin/migrar_erp_core.php después de migrar.
+
+Validación:
+- Sintaxis PHP revisada sin errores.

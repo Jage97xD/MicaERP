@@ -1,0 +1,21 @@
+.mica-login-overlay{position:fixed;inset:0;background:rgba(15,23,42,.62);backdrop-filter:blur(2px);display:none;align-items:center;justify-content:center;z-index:999999}
+.mica-login-overlay.active{display:flex}
+.mica-login-modal{width:460px;max-width:calc(100% - 30px);background:white;border-radius:18px;padding:34px;position:relative;box-shadow:0 22px 60px rgba(15,23,42,.32);animation:micaLoginIn .18s ease-out}
+@keyframes micaLoginIn{from{transform:translateY(18px);opacity:0}to{transform:translateY(0);opacity:1}}
+.mica-login-close{position:absolute;top:18px;right:18px;border:0;background:transparent;font-size:30px;color:#64748b;cursor:pointer}
+.mica-login-brand{display:flex;align-items:center;gap:12px;margin-bottom:22px}
+.mica-login-brand span{width:48px;height:48px;background:#008ee6;color:white;border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:900}
+.mica-login-brand strong{font-size:25px;color:#07162f}
+.mica-login-modal h2{margin:0 0 12px;font-size:28px;color:#07162f}
+.mica-login-modal p{margin:0 0 20px;color:#475569;line-height:1.4}
+.mica-login-modal label{display:block;margin:12px 0 6px;font-weight:bold;color:#111827}
+.mica-login-modal input{width:100%;border:0;border-bottom:1px solid #64748b;padding:12px 0;font-size:15px;outline:none}
+.mica-password-box{display:flex;align-items:center;border-bottom:1px solid #64748b}
+.mica-password-box input{border-bottom:0}
+.mica-password-box button{border:0;background:transparent;cursor:pointer;font-size:18px}
+.mica-login-submit{width:100%;margin-top:28px;border:0;border-radius:999px;background:#111827;color:white;padding:15px;font-weight:900;font-size:16px;cursor:pointer}
+.mica-login-submit:hover{background:#0057d9}
+.mica-login-footer{margin-top:20px;text-align:center;color:#64748b}
+.mica-login-footer a{color:#0057d9;font-weight:bold}
+.mica-login-error{background:#fee2e2;color:#991b1b;padding:12px;border-radius:12px;font-weight:bold;margin-bottom:12px}
+.mica-login-ok{background:#dcfce7;color:#166534;padding:12px;border-radius:12px;font-weight:bold;margin-bottom:12px}

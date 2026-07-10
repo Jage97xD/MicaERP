@@ -1,0 +1,13 @@
+MicaStore v10 - Institucional, reclamaciones y campos personalizados
+
+Cambios:
+- Campos personalizados ahora sí se renderizan en Footer y Contacto.
+- Footer actualizado con enlaces institucionales.
+- Publicidad final configurable para ofrecer desarrollo web.
+- Nuevas páginas públicas: nosotros.php, libro_reclamaciones.php, terminos.php, privacidad.php.
+- Nuevo módulo admin: Reclamaciones.
+- Configuración agrega pestaña Institucional: misión, visión, valores y publicidad.
+- Migrador actualizado para crear libro_reclamaciones y valores por defecto.
+
+Ejecutar una vez:
+/micastore/admin/migrar_erp_core.php

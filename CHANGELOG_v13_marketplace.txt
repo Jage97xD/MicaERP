@@ -1,0 +1,9 @@
+MicaStore Marketplace v13
+
+- Nuevo módulo admin Tiendas / Vendedores.
+- Cada tienda puede tener logo, WhatsApp, responsable, categoría principal y datos propios.
+- Usuarios admin pueden tener rol Vendedor y tienda asignada.
+- El rol Vendedor ve sus productos y cotizaciones de su tienda.
+- Productos pueden asignarse a una tienda/vendedor.
+- Producto público muestra Vendido por y usa WhatsApp propio de la tienda.
+- Corrección CSS para logos horizontales o imágenes reales en el header.

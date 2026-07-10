@@ -1,0 +1,161 @@
+/* Header cliente PRO - corregido */
+
+.v3-topbar,
+.v3-header,
+.v3-menu{
+    position: relative !important;
+}
+
+.v3-topbar{
+    z-index: 30000 !important;
+}
+
+.v3-header{
+    z-index: 29999 !important;
+    overflow: visible !important;
+}
+
+.v3-menu{
+    z-index: 20000 !important;
+}
+
+.v3-slider,
+.v3-hero,
+.v3-services{
+    position: relative !important;
+    z-index: 1 !important;
+}
+
+.mica-user-menu{
+    position: relative !important;
+    width: 190px !important;
+    height: 54px !important;
+    padding: 0 14px !important;
+    border-radius: 15px !important;
+    display: flex !important;
+    align-items: center !important;
+    background: #ffffff !important;
+    color: #07162f !important;
+    box-shadow: 0 10px 25px rgba(0,0,0,.10) !important;
+    border: 1px solid #e6e6e6 !important;
+    cursor: pointer !important;
+    overflow: visible !important;
+    z-index: 999999 !important;
+}
+
+.mica-user-menu:hover{
+    box-shadow: 0 12px 26px rgba(15,23,42,.16) !important;
+}
+
+.mica-user-icon{
+    width: 36px !important;
+    height: 36px !important;
+    min-width: 36px !important;
+    border-radius: 50% !important;
+    background: #eef4ff !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 18px !important;
+}
+
+.mica-user-text{
+    display: flex !important;
+    flex-direction: column !important;
+    line-height: 1.05 !important;
+    text-align: left !important;
+    margin-left: 9px !important;
+    flex: 1 !important;
+    overflow: hidden !important;
+}
+
+.mica-user-text small{
+    font-size: 11px !important;
+    color: #64748b !important;
+    font-weight: 600 !important;
+}
+
+.mica-user-text strong{
+    font-size: 15px !important;
+    color: #111827 !important;
+    max-width: 95px !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+}
+
+.mica-user-arrow{
+    margin-left: auto !important;
+    color: #64748b !important;
+    font-size: 11px !important;
+}
+
+.mica-user-dropdown{
+    position: absolute !important;
+    top: 66px !important;
+    right: 0 !important;
+    width: 245px !important;
+    background: #ffffff !important;
+    border-radius: 16px !important;
+    box-shadow: 0 18px 45px rgba(15,23,42,.25) !important;
+    border: 1px solid #e5e7eb !important;
+    padding: 10px !important;
+    z-index: 9999999 !important;
+    display: none;
+}
+
+.mica-user-dropdown.active{
+    display: block !important;
+}
+
+.mica-user-dropdown::before{
+    content: "" !important;
+    position: absolute !important;
+    top: -8px !important;
+    right: 34px !important;
+    width: 16px !important;
+    height: 16px !important;
+    background: #ffffff !important;
+    transform: rotate(45deg) !important;
+    border-left: 1px solid #e5e7eb !important;
+    border-top: 1px solid #e5e7eb !important;
+}
+
+.mica-user-dropdown a{
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    width: 100% !important;
+    height: auto !important;
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    background: transparent !important;
+    color: #07162f !important;
+    padding: 12px !important;
+    border-radius: 12px !important;
+    font-weight: 800 !important;
+    box-shadow: none !important;
+    text-decoration: none !important;
+}
+
+.mica-user-dropdown a:hover{
+    background: #f1f5f9 !important;
+}
+
+.mica-user-dropdown .logout{
+    color: #dc2626 !important;
+}
+
+.mica-user-divider{
+    height: 1px !important;
+    background: #e5e7eb !important;
+    margin: 8px 0 !important;
+}
+
+.mica-user-small{
+    padding: 10px 12px !important;
+    color: #64748b !important;
+    font-size: 13px !important;
+    line-height: 1.35 !important;
+}

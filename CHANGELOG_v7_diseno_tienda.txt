@@ -1,0 +1,13 @@
+MicaStore v7 - Diseño de tienda
+
+Cambios principales:
+- Se reemplazó el antiguo Constructor visual PRO por el módulo Diseño de tienda.
+- Se eliminó la edición manual por coordenadas X/Y desde la interfaz.
+- Se agregó una vista previa referencial del header sin iframe, evitando el error Not Found.
+- Se mantiene la tabla store_builder para compatibilidad, pero ahora se administra como componentes visibles/ocultos.
+- Se agregaron accesos rápidos a TopBar, Menú público, Configuración, Bloques, Carrusel y tienda real.
+- Se agregó mantenimiento para restaurar el header recomendado.
+- Se actualizó el menú lateral del admin: Constructor visual -> Diseño de tienda.
+
+Recomendación:
+- Seguir usando módulos separados: TopBar para barra superior, Menú público para navegación, Configuración para datos globales y Diseño de tienda solo para estructura del header.

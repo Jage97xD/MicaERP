@@ -1,0 +1,12 @@
+<!-- CSS: agrega esto dentro del <head> de tienda_visual_v3.php o producto_mysql.php -->
+<link rel="stylesheet" href="includes/favoritos/favoritos.css">
+
+<!-- JS: agrega esto antes de cerrar </body> -->
+<script src="includes/favoritos/favoritos.js"></script>
+
+<!-- Botón dentro de cada tarjeta de producto, donde tengas el ID del producto -->
+<button class="fav-btn" type="button" onclick="toggleFavorito(<?= (int)$p['id'] ?>, this)">♡</button>
+
+<!-- Link para el header -->
+<a class="fav-link" href="cliente/favoritos.php">Favoritos <span id="contadorFavoritos" class="fav-count">0</span></a>
+<script>actualizarContadorFavoritos();</script>
